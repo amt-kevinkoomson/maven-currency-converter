@@ -11,6 +11,6 @@ public class Currency {
     }
     public Double convertTo (Double amount, Currency targetCurrency) {
         Double amountInUsd = amount / rate;
-        return amount * targetCurrency.rate;
+        return amountInUsd * targetCurrency.rate;
     }
 }
