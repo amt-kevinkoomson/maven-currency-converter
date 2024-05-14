@@ -13,4 +13,7 @@ public class Currency {
         Double amountInUsd = amount / rate;
         return amountInUsd * targetCurrency.rate;
     }
+    public String toString(){
+        return name + " " + code + " " + rate;
+    }
 }

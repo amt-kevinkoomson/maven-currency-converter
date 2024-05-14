@@ -32,6 +32,7 @@ public class CurrencyApi {
                     .setHeader("apikey", apiKey)
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//            System.out.println(response.body());
             return CurrencyUtils.toCurrency(response.body(), code);
 
         } catch(IOException | InterruptedException exception) {
@@ -39,7 +40,7 @@ public class CurrencyApi {
         }
     }
     public static void main(String...args){
-        Currency s = getCurrency("USD");
-        System.out.println(s);
+        Currency s = getCurrency("AUD");
+        System.out.println(s.toString());
     }
 }

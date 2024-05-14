@@ -11,8 +11,7 @@ public class CurrencyUtils {
 
     public static Currency toCurrency(String response, String code) {
         try{
-            String currencyList = objectMapper.readTree(response).get("data").asText();
-            Double rate = objectMapper.readTree(currencyList).get(code).asDouble();
+            Double rate = objectMapper.readTree(response).get("data").get(code).asDouble();
             return new Currency(code, rate, code);
         } catch(IOException e){
             throw new UncheckedIOException(e);
